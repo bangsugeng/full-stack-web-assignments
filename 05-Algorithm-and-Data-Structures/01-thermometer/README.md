@@ -6,13 +6,13 @@
 SET temperatur TO INPUT()
 SET tipe TO INPUT()
 
-IF tipe EQUALS "fahrenheit":    
+IF tipe = "fahrenheit":    
     OUTPUT((temperatur - 32) * (5/9))
 
-ELSE IF tipe EQUALS "kelvin":
+ELSE IF tipe = "kelvin":
     OUTPUT((temperatur - 273.15))
 
-ELSE IF tipe EQUALS "celcius":
+ELSE IF tipe = "celcius":
     OUTPUT(temperatur)
 
 else :
