@@ -1,6 +1,6 @@
 ### Tugas 02-fizz-buzz
 
-```
+```ps
 # Start Writing Here
 
 INPUT NILAI_SISWA
@@ -14,7 +14,7 @@ ELSE IF NILAI_SISWA MOD 5 >= 3 THEN
 
 ELSE DISPLAY "FINAL_GRADE", NILAI_SISWA
 
-ENDIF
+END IF
 
 DISPLAY "SELESAI"
 ```

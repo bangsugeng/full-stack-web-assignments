@@ -1,6 +1,6 @@
 ### Tugas 02-fizz-buzz
 
-```
+```ps
 # Start Writing Here
 
 WHILE Nilai <= 20
@@ -15,8 +15,8 @@ WHILE Nilai <= 20
         ELSE
         DISPLAY Nilai
 
-    ENDIF
+    END IF
     
     Nilai = Nilai+1
-ENDWHILE
+END WHILE
 ```

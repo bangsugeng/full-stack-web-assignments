@@ -1,6 +1,6 @@
 ### Tugas 03-same-meaning
 
-```
+```ps
 # Start Writing Here
 
 INPUT Kata // User input KATAK
@@ -15,7 +15,7 @@ WHILE kata_awal < Panjangkata
     IF KATA(kata_akhir) IS NOT KATA(kata_awal) THEN
         output = FALSE
 
-    ENDIF
+    END IF
     
     kata_awal--
     kata_akhir++
