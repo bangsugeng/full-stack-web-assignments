@@ -13,7 +13,10 @@ output = TRUE
 
 WHILE kata_awal < Panjangkata
     IF KATA(kata_akhir) IS NOT KATA(kata_awal) THEN
+        output = FALSE
+
     ENDIF
+    
     kata_awal--
     kata_akhir++
 
