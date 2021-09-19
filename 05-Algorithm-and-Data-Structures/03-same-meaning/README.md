@@ -1,6 +1,6 @@
 ### Tugas 03-same-meaning
 
-```ps
+```
 # Start Writing Here
 
 INPUT Kata // User input KATAK

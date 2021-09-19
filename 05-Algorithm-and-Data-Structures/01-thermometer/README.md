@@ -1,6 +1,6 @@
 ### Tugas 01-thermometer
 
-```ps
+```
 # Start Writing Here
 
 SET temperatur TO INPUT()

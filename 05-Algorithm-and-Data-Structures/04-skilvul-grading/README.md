@@ -1,6 +1,6 @@
 ### Tugas 02-fizz-buzz
 
-```ps
+```
 # Start Writing Here
 
 INPUT NILAI_SISWA
