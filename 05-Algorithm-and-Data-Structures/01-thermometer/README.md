@@ -16,5 +16,5 @@ ELSE IF tipe = "celcius":
     OUTPUT(temperatur)
 
 else :
-    OUTPUT("jenis yang dimasukan salah")
+    OUTPUT("tipe yang dimasukan salah")
 ```
