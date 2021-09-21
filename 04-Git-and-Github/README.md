@@ -21,7 +21,8 @@ Link Repository: https://github.com/bangsugeng/full-stack-web-assignments/tree/m
 Link Repository: https://github.com/bangsugeng/full-stack-web-assignments/tree/master/04-Git-and-Github/04-more-advanced
 
 ## 05-submit-my-changes
-Link Repository: https://github.com/bangsugeng/tech4impact-students-bio/tree/Doni
+Link Repository: https://github.com/impactbyte/tech4impact-students-bio/pull/62
 
-![Screenshot (1113)](https://user-images.githubusercontent.com/75771345/134189986-e60dc864-fe8a-4649-9c96-39e944f85569.png)
+Link command: https://github.com/bangsugeng/full-stack-web-assignments/blob/master/04-Git-and-Github/05-submit-my-changes.md
 
+![Screenshot (1116)](https://user-images.githubusercontent.com/75771345/134200693-c20be372-40ad-42b1-8d60-b1d23b12bb3d.png)
