@@ -1,10 +1,10 @@
 # Tugas 4-Git-and-Github
 
 ## 01-the-basics
-Link Repository: 
+Link Repository: https://github.com/bangsugeng/full-stack-web-assignments/tree/master/04-Git-and-Github/01-the-basics
 
 ## 02-portofolio-and-cv
-Link Repository: 
+Link Repository: https://github.com/bangsugeng/02-portfolio-and-cv/tree/master
 
 ## 03-branch-and-merge
 Link Repository: 
