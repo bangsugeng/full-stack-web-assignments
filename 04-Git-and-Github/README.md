@@ -3,8 +3,12 @@
 ## 01-the-basics
 Link Repository: https://github.com/bangsugeng/full-stack-web-assignments/tree/master/04-Git-and-Github/01-the-basics
 
+Link command: https://github.com/bangsugeng/full-stack-web-assignments/blob/master/04-Git-and-Github/01-the-basics/README.md
+
 ## 02-portofolio-and-cv
 Link Repository: https://github.com/bangsugeng/02-portfolio-and-cv/tree/master
+
+Link command: https://github.com/bangsugeng/full-stack-web-assignments/blob/master/04-Git-and-Github/02-portofolio-and-cv.md
 
 hasil git log
 
