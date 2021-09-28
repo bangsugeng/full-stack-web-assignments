@@ -7,21 +7,23 @@
 
 /// WRITE YOUR ANALYSIS HERE
 /*
-ada 3 scope
-    Block scope
-        variabel yang dideklarasikan diadalm { } dan tidak bisa diakses diluar bloknya sendiri
-    Function scope
-        variabel yang dideklarasikan didalam sebuah function dan tidak bisa diakses diluar function itu sendiri
-    Global scope
+ada 2 scope
+    - Local Scope
+        - Block scope
+            variabel yang dideklarasikan diadalm { } dan tidak bisa diakses diluar bloknya sendiri
+        - Function scope
+            variabel yang dideklarasikan didalam sebuah function dan tidak bisa diakses diluar function itu sendiri
+
+    - Global scope
         variabel yang dideklarasikan secara global dan bisa dipanggil di blok/fungsi manapun
 */
 
-//block scope
+//Local Scope (block scope)
 if(1){ 
     let city = "Bikini Bottom";
 }
 
-// function scope
+//local Scope (function scope)
 function myFunction() {
     var city = "Bikini Bottom";
 }
