@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Skilvul</title>
+</head>
+
+<body>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" />
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" />
+    <button id="btn-submit" style="display: block; margin-top: 10px">
+        submit
+    </button>
+    <script>
+        /// EDIT DOWN HERE
+        const elBtnSubmit = document.querySelector("#btn-submit");
+        const elInputEmail = document.querySelector("#email");
+        const elInputPassword = document.querySelector("#password");
+        const regexEmail = /^[A-Za-z.]+[\w\d]+@\w+\.\w+/;
+        const regexPassword = /[A-Za-z\d-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]{8,}/;
+        const regexCapital = /[A-Z]/
+        const regexSmall = /[a-z]/
+        const regexNumber = /[0-9]/
+        const regexSymbol = /[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/
+
+        elBtnSubmit.onclick = function (e) {
+            e.preventDefault();
+
+            if (!elInputEmail.value.match(regexEmail)) {
+                alert("tolong masukan email yang valid");
+            } else if (elInputPassword.value.match(regexPassword) &&
+                elInputPassword.value.match(regexCapital) &&
+                elInputPassword.value.match(regexSmall) &&
+                elInputPassword.value.match(regexNumber) &&
+                elInputPassword.value.match(regexSymbol)) {
+                alert("Welcome to The Jungle");
+            } else {
+                alert("tolong masukan password sesuai ketentuan");
+            }
+        }
+    </script>
+</body>
+
+</html>
