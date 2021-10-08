@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skilvul</title>
+</head>
+
+<body>
+    <h3>Greeting Form</h3>
+    <form id="form-greeting">
+        <label for="name">name</label>
+        <input autocomplete="off" id="input-name" type="text" name="name" id="name" />
+        <br />
+        <button type="submit">submit</button>
+    </form>
+    <br />
+    <h3>Login Form</h3>
+    <form id="form-login">
+        <label for="email">email</label>
+        <input autocomplete="off" id="input-email" type="email" name="email" id="email" />
+        <br />
+        <label for="password">password</label>
+        <input type="text" id="input-password" name="password" id="password" />
+        <br />
+        <button type="submit">submit</button>
+    </form>
+
+    <script type="module">
+        // IMPORT HERE
+      import {sayHello,greeting} from "/07-JavaScript-Intermediate/06-module/06-module-helpers.js";
+      import {validateLoginData} from  "/07-JavaScript-Intermediate/06-module/06-modules-authentication.js";
+
+      const elFormGreeting = document.querySelector("#form-greeting");
+      const elFormLogin = document.querySelector("#form-login");
+
+      const elInputName = document.querySelector("#input-name");
+      const elInputEmail = document.querySelector("#input-email");
+      const elInputPassword = document.querySelector("#input-password");
+
+      // EDIT HERE
+      // nomor 1
+      sayHello();
+
+      // soal 2
+      elFormGreeting.onsubmit = function(e) {
+        e.preventDefault();
+        greeting(elInputName.value);
+      }
+
+      elFormLogin.onsubmit = function(e) {
+        e.preventDefault();
+        validateLoginData(elInputEmail.value,elInputPassword.value);
+      }
+    </script>
+</body>
+
+</html>
