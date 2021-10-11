@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <title>Skilvul</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">Skilvul</a>
+            <form id="form-username" class="d-flex">
+                <input class="form-control me-2" type="text" placeholder="Username" aria-label="username"
+                    name="username" />
+                <button class="btn btn-outline-primary" type="submit">login</button>
+            </form>
+            <div id="div-username" class="d-none d-flex">
+                <button type="button" class="my-auto btn btn-primary btn-sm position-relative h-50">
+                    <span id="username"></span>
+                    <span id="badge-user"
+                        class="top-0 position-absolute start-100 translate-middle badge rounded-pill bg-danger d-none">
+                        10
+                        <span class="visually-hidden">unread messages</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div id="list-user" class="row"></div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script type="module">
+        import githubUsers from "./07-web-storage-dummy-data.js";
+
+        const elFormUsername = document.querySelector("#form-username");
+        const elDivUsername = document.querySelector("#div-username");
+        const elUsername = document.querySelector("#username");
+        const elListUser = document.querySelector("#list-user");
+        const elBadgeUser = document.querySelector("#badge-user");
+
+        // WEB STORAGE
+        let username = sessionStorage.getItem("username");
+        let profile = localStorage.getItem(username);
+
+        drawUserCard();
+        drawFollowingsNumber((JSON.parse(profile) || []).length);
+        // githubUsers.forEach((user) => {
+        //     const elCol = document.createElement("div");
+        //     elCol.classList.add("col-xs-12", "col-sm-6", "col-md-4", "col-lg-3");
+
+        //     const elCard = document.createElement("div");
+        //     elCard.classList.add("card");
+
+        //     const elCardImg = document.createElement("div");
+        //     elCard.classList.add("card-img-top");
+        //     elCard.setAttribute("src", user.avatar_url);
+
+        //     const elCardBody = document.createElement("div");
+        //     elCardBody.classList.add("card-body");
+
+        //     const elCardTitle = document.createElement("div");
+        //     elCardTitle.classList.add("card-title");
+        //     elCardTitle.innerHTML = user.login;
+
+        //     const elCardButton = document.createElement("button");
+        //     elCardButton.classList.add("btn", "btn-primary", "w-100");
+        //     elCardButton.setAttribute("type", "button");
+        //     elCardButton.innerHTML = "Follow";
+
+        //     elCardBody.appendChild(elCardTitle);
+        //     elCardBody.appendChild(elCardButton);
+        //     elCard.appendChild(elCardBody);
+        //     elCard.appendChild(elCardImg);
+        //     elCol.appendChild(elCard);
+
+        //     elListUser.appendChild(elCol);
+        // });
+
+        //check username
+        if (username) {
+            elDivUsername.classList.remove("d-none");
+            elFormUsername.classList.add("d-none");
+            elUsername.innerHTML = username;
+            //init
+            registerEventClickToEachButton();
+        }
+
+        function drawFollowingsNumber(number) {
+            if (number > 0) {
+                elBadgeUser.classList.remove("d-none");
+            } else {
+                elBadgeUser.classList.add("d-none");
+            }
+            elBadgeUser.innerHTML = number;
+        }
+
+        elFormUsername.addEventListener("submit", function (event) {
+            event.preventDefault();
+            // take user input value/username
+            const usernameFromInput = event.target['username'].value;
+            // check if username is valid
+            if (usernameFromInput !== "") {
+                sessionStorage.setItem("username", usernameFromInput);
+                // update 'username' global variable with user input as a value
+                username = usernameFromInput;
+                // show/hide login form
+                elDivUsername.classList.remove("d-none");
+                elFormUsername.classList.add("d-none");
+                elUsername.innerHTML = username;
+                // init
+                registerEventClickToEachButton();
+            }
+        });
+
+        function drawUserCard() {
+            githubUsers.forEach((user) => {
+                // element/card creation for each users
+                const elCol = document.createElement("div");
+                elCol.classList.add("col-xs-12", "col-sm-6", "col-md-4", "col-lg-3");
+                const elCard = document.createElement("div");
+                elCard.classList.add("card");
+                const elCardImg = document.createElement("div");
+                elCard.classList.add("card-img-top");
+                elCard.setAttribute("src", user.avatar_url);
+                const elCardBody = document.createElement("div");
+                elCardBody.classList.add("card-body");
+                const elCardTitle = document.createElement("div");
+                elCardTitle.classList.add("card-title");
+                elCardTitle.innerHTML = user.login;
+                const elCardButton = document.createElement("button");
+
+                // handle button state
+                const followings = JSON.parse(profile);
+                // const alreadyFollow = followings?.find((u) => u.id === user.id);
+                if (followings?.find((u) => u.id === user.id)) {
+                    elCardButton.classList.add("follow-button", "btn", "btn-success", "w-100");
+                    elCardButton.setAttribute("type", "button");
+                    elCardButton.setAttribute("data-id", user.id)
+                    elCardButton.innerHTML = "Unfollow";
+                } else {
+                    elCardButton.classList.add("follow-button", "btn", "btn-primary", "w-100");
+                    elCardButton.setAttribute("type", "button");
+                    elCardButton.setAttribute("data-id", user.id)
+                    elCardButton.innerHTML = "Follow";
+                }
+
+                // element attachment
+                elCardBody.appendChild(elCardTitle);
+                elCardBody.appendChild(elCardButton);
+                elCard.appendChild(elCardBody);
+                elCard.appendChild(elCardImg);
+                elCol.appendChild(elCard);
+                elListUser.appendChild(elCol);
+            });
+        }
+        function registerEventClickToEachButton() {
+            // event handler when follow/unfollow button clicked
+            let elFollowButtons = document.querySelectorAll(".follow-button");
+            for (let i = 0; i < elFollowButtons.length; i++) {
+                const followButton = elFollowButtons[i];
+                followButton.addEventListener("click", function () {
+                    console.log("listen");
+                    const userId = this.getAttribute("data-id");
+                    const followings = JSON.parse(profile) || [];
+                    const userTarget = followings.find((u) => u.id === Number(userId));
+                    const userDataFromDb = githubUsers.find((u) => u.id === Number(userId));
+                    if (!followings.find((u) => u.id === Number(userId))) {
+                        console.log("new");
+                        // when user not follow yet, FOLLOW
+                        const dataToBePush = [userDataFromDb, ...followings];
+                        localStorage.setItem(username, JSON.stringify(dataToBePush));
+                        profile = JSON.stringify(dataToBePush);
+                        // DOM
+                        this.classList.add("btn", "btn-success", "w-100");
+                        this.setAttribute("type", "button");
+                        this.innerHTML = "Unfollow";
+                        // mutate badge ++ followings.length
+                        drawFollowingsNumber(dataToBePush.length);
+                    } else {
+                        console.log("old");
+                        // when user already follow, UNFOLLOW
+                        const withoutUser = followings.filter((u) => u.id !== Number(userId))
+                        const dataToBePush = withoutUser;
+                        localStorage.setItem(username, JSON.stringify(dataToBePush));
+                        profile = JSON.stringify(dataToBePush);
+                        // DOM
+                        this.classList.remove("btn-success");
+                        this.classList.add("btn", "btn-primary", "w-100");
+                        this.setAttribute("type", "button");
+                        this.innerHTML = "Follow";
+                        // mutate badge -- followings.length
+                        drawFollowingsNumber(withoutUser.length);
+                    }
+                });
+            }
+        }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
