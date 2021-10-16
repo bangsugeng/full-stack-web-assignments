@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Skilvul</title>
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            background-color: lightgray;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2em auto;
+        }
+
+        .flex {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .content {
+            height: 100%;
+            background-color: white;
+            padding: 0.5em;
+            flex: 5;
+        }
+
+        .categories {
+            height: 100%;
+            background-color: white;
+            padding: 0.5em;
+            flex: 2;
+            margin-left: 15px;
+        }
+
+        .categories-item {
+            display: block;
+            padding: 0.5em;
+            text-decoration: none;
+            color: black;
+        }
+
+        .categories-item:hover {
+            background-color: gray;
+            color: white;
+        }
+
+        .list-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .item-body>h5 {
+            margin: 0;
+            margin-bottom: 1em;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        .item-body>button {
+            width: 100%;
+            background: lightgreen;
+            padding: 0.5em;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .item-body {
+            padding: 0px 15px;
+        }
+
+        .item-body>button:hover {
+            background: green;
+            color: white;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+        }
+
+        .item:first-child {
+            flex: 1;
+        }
+
+        .item:nth-child(2) {
+            flex: 2;
+        }
+
+        .item-thumbnail img {
+            width: 223px;
+            height: 143px;
+            object-fit: cover;
+        }
+
+
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            .container {
+                margin: 1em;
+            }
+
+            .flex {
+                flex-direction: column;
+            }
+
+            .content {
+                flex-grow: auto;
+                order: 2;
+            }
+
+            .categories {
+                flex-grow: auto;
+                order: 1;
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .item {
+                flex-direction: column;
+            }
+
+            .item:first-child {
+                flex: auto;
+            }
+
+            .item:nth-child(2) {
+                flex: auto;
+            }
+
+            .item-text {
+                display: none;
+            }
+
+            .item-thumbnail img {
+                max-width: 100%;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="flex">
+            <div class="content">
+                <h3>content</h3>
+                <div class="list-item">
+                    <div class="item">
+                        <div class="item-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=450&ixid=MnwxfDB8MXxyYW5kb218MHx8Y29mZmVlfHx8fHx8MTYzMzkzOTI1NA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=450"
+                                alt="skilvul" class="item-image">
+                        </div>
+
+                        <div class="item-body">
+                            <h5 class="item-title">coffee beans</h5>
+                            <p class="item-text">A coffee bean is a seed of the Coffea plant and the source for coffee.
+                                It is the pip inside the red or purple fruit often referred to as a cherry.</p>
+                            <button>BUY</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=450&ixid=MnwxfDB8MXxyYW5kb218MHx8Y29mZmVlfHx8fHx8MTYzMzkzOTI1NA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=450"
+                                alt="skilvul" class="item-image">
+                        </div>
+
+                        <div class="item-body">
+                            <h5 class="item-title">coffee beans</h5>
+                            <p class="item-text">A coffee bean is a seed of the Coffea plant and the source for coffee.
+                                It is the pip inside the red or purple fruit often referred to as a cherry.</p>
+                            <button>BUY</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=450&ixid=MnwxfDB8MXxyYW5kb218MHx8Y29mZmVlfHx8fHx8MTYzMzkzOTI1NA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=450"
+                                alt="skilvul" class="item-image">
+                        </div>
+
+                        <div class="item-body">
+                            <h5 class="item-title">coffee beans</h5>
+                            <p class="item-text">A coffee bean is a seed of the Coffea plant and the source for coffee.
+                                It is the pip inside the red or purple fruit often referred to as a cherry.</p>
+                            <button>BUY</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=450&ixid=MnwxfDB8MXxyYW5kb218MHx8Y29mZmVlfHx8fHx8MTYzMzkzOTI1NA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=450"
+                                alt="skilvul" class="item-image">
+                        </div>
+
+                        <div class="item-body">
+                            <h5 class="item-title">coffee beans</h5>
+                            <p class="item-text">A coffee bean is a seed of the Coffea plant and the source for coffee.
+                                It is the pip inside the red or purple fruit often referred to as a cherry.</p>
+                            <button>BUY</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="categories">
+                <a class="categories-item" href="#">HTML</a>
+                <a class="categories-item" href="#">CSS</a>
+                <a class="categories-item" href="#">Javascript</a>
+                <a class="categories-item" href="#">Frontend</a>
+                <a class="categories-item" href="#">Backtend</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
