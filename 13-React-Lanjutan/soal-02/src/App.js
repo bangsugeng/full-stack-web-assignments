@@ -93,7 +93,7 @@ export default function App() {
                 </div>
                 {new Intl.NumberFormat("en-US", {
                   style: "currency",
-                  currency: "USD",
+                  currency: "USD"
                 }).format(total)}
               </li>
             </ol>
