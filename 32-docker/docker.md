@@ -19,4 +19,4 @@ docker registery merupakan tempat untuk hosting atau menyimpan image yang kita m
 <br>
 
 5. Jelaskan bagaimana cara untuk menjalankan lebih dari 1 container secara bersamaan dan saling terhubung ! <br>
-Dengan cara membuat setup di satu file docker-compose.yml yang nantinya akan mengelompokkan container yang berbeda menjadi satu container sehingga dapat terhubung dan dijalankans secara bersamaan
+Dengan cara membuat setup di satu file docker-compose.yml yang nantinya akan mengelompokkan container yang berbeda menjadi satu container sehingga dapat terhubung dan dijalankan secara bersamaan
